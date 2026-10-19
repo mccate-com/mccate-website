@@ -116,6 +116,14 @@ collections:
                 fields:
                   - { label: Photo, name: image, widget: image }
                   - { label: Photo description, name: alt, widget: string, required: false }
+                  - { label: Show whole image (for diagrams), name: fit, widget: select, options: [cover, contain], default: cover, required: false }
+              - label: Logos
+                name: logos
+                widget: list
+                required: false
+                fields:
+                  - { label: Logo, name: image, widget: image }
+                  - { label: Name, name: alt, widget: string, required: false }
               - { label: "Graphic when there is no photo", name: art, widget: select, options: [rings, bars, plan, flow], default: rings }
               - { label: Client and partners, name: client, widget: string, required: false }
               - { label: Challenge, name: challenge, widget: text, required: false }

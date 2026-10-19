@@ -23,7 +23,38 @@
       "client": "DSM N.V., with iLINQ and Dijkgraaf Strategisch Advies",
       "challenge": "In 2020 the region depended on overseas suppliers for protective equipment, and locally made masks were designed for incineration, destroying large volumes of high-value, non-renewable materials. Speed had come before sustainability.",
       "approach": "Together with Dutch PPE Solutions (a joint venture of VDL and DSM), Maasstad hospital, Renewi and PreZero we mapped a circular value chain. Interviews, brainstorms and co-creation with hospital staff tested the legal, medical, design and material criteria and defined roles for a pilot.",
-      "result": "A complete concept design for the product and value chain, a feasibility assessment with a visual pilot roadmap, tested strategies for design and recycling, and an action plan for commercialisation. The work became the basis for a Dutch government procurement project."
+      "result": "A complete concept design for the product and value chain, a feasibility assessment with a visual pilot roadmap, tested strategies for design and recycling, and an action plan for commercialisation. The work became the basis for a Dutch government procurement project.",
+      "gallery": [
+        {
+          "image": "/images/recover-value-chain.png",
+          "alt": "The circular value chain for medical face masks",
+          "fit": "contain"
+        },
+        {
+          "image": "/images/recover-mask-design.png",
+          "alt": "Design for comfort, safety and recycling",
+          "fit": "contain"
+        },
+        {
+          "image": "/images/recover-hospital-flow.png",
+          "alt": "Collecting used products safely in the hospital",
+          "fit": "contain"
+        }
+      ],
+      "logos": [
+        {
+          "image": "/images/logo-dutch-ppe.jpg",
+          "alt": "Dutch PPE Solutions"
+        },
+        {
+          "image": "/images/logo-maasstad.png",
+          "alt": "Maasstad Ziekenhuis"
+        },
+        {
+          "image": "/images/logo-prezero.png",
+          "alt": "PreZero"
+        }
+      ]
     },
     {
       "id": "canteen",
@@ -65,15 +96,21 @@
       "client": "Qumey Metaalindustrie B.V.",
       "challenge": "Qumey wanted to show stakeholders and the industry what its new circular product range could be.",
       "approach": "We defined and prioritised the key design criteria with Qumey, made a first digital concept and refined design and story in online feedback sessions.",
-      "result": "One conceptual image that shows the different designs, the sustainability story and the unique features, and helps Qumey communicate its product vision."
+      "result": "One conceptual image that shows the different designs, the sustainability story and the unique features, and helps Qumey communicate its product vision.",
+      "logos": [
+        {
+          "image": "/images/logo-qumey.png",
+          "alt": "Qumey Metaal"
+        }
+      ]
     },
     {
       "id": "earth",
       "title": "Interim management",
       "summary": "Keeping a soil investigation and archaeology firm running, then making it run better.",
       "art": "flow",
-      "image": "",
-      "imageAlt": "",
+      "image": "/images/interim-management.svg",
+      "imageAlt": "Illustration: tangled lines pass through a gate and come out as clean parallel lines",
       "client": "Soil investigation and archaeology firm, Amersfoort (ongoing)",
       "challenge": "After seven years the manager left. The organisation had to keep running while nobody yet knew where its processes were fragile.",
       "approach": "Stepped in to keep operations going, then brought structure to the processes. First exposed the bottlenecks, now automating the repetitive work wherever possible.",

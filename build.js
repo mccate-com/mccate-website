@@ -235,8 +235,8 @@ ${emailLine(site, s.cta, true)}`;
             <h2>${esc(x.title)}</h2>
             <p>${esc(x.summary)}</p>
 ${rows ? `            <dl>\n${rows}\n            </dl>` : ''}
-          </div>
-${(x.gallery || []).filter(g => g && g.image).length ? `          <div class="gallery">\n${x.gallery.filter(g => g && g.image).map(g => `            <img src="${esc(g.image)}" alt="${esc(g.alt || x.title)}" loading="lazy">`).join('\n')}\n          </div>\n` : ''}        </article>`;
+${(x.logos || []).filter(g => g && g.image).length ? `            <div class="logos">${x.logos.filter(g => g && g.image).map(g => `<img src="${esc(g.image)}" alt="${esc(g.alt || '')}" loading="lazy">`).join('')}</div>\n` : ''}          </div>
+${(x.gallery || []).filter(g => g && g.image).length ? `          <div class="gallery${x.gallery.some(g => g && g.fit === 'contain') ? ' contain' : ''}">\n${x.gallery.filter(g => g && g.image).map(g => `            <img src="${esc(g.image)}" alt="${esc(g.alt || x.title)}" loading="lazy">`).join('\n')}\n          </div>\n` : ''}        </article>`;
     }).join('\n');
     return `${band(c.title, c.sub, c.image)}
 
