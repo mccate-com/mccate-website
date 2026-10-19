@@ -6,7 +6,6 @@ Na deze stappen bewerk je de site op https://www.mccate.com/admin (of tijdelijk 
 1. Maak een gratis account op github.com.
 2. Maak een nieuwe, lege repository, bijvoorbeeld `mccate-website` (privé mag).
 3. Zet de inhoud van deze map in die repository (zonder de map `dist`, die staat al in .gitignore).
-4. Open `admin/config.yml` en vervang `OWNER/REPO` door `jouwgebruikersnaam/mccate-website`.
 
 ## 2. Netlify koppelen aan GitHub
 1. Netlify, project *mccate-company*, Project configuration, Build & deploy, Continuous deployment, Link repository. Kies de repository.
