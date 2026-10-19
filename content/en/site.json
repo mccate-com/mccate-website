@@ -1,0 +1,24 @@
+{
+  "brand": "McCate",
+  "founder": "Friso Kater",
+  "email": "info@mccate.com",
+  "phone": "+31 6 11 83 45 23",
+  "phoneRaw": "+31611834523",
+  "linkedin": "https://www.linkedin.com/in/friso-kater-0a3985193/",
+  "location": "The Netherlands",
+  "skip": "Skip to content",
+  "tagline": ["Innovate.", "Trust.", "Connect."],
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "cases": "Cases",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "slugs": {
+    "services": "services",
+    "cases": "cases",
+    "about": "about",
+    "contact": "contact"
+  }
+}

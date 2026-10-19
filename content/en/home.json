@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Innovation & Spatial Development | McCate & Company",
+    "description": "McCate & Company speeds up innovation and spatial development projects. Strategic design and interim management in the Netherlands and Sweden."
+  },
+  "hero": {
+    "lines": ["Innovation", "& spatial", "development."],
+    "intro": "We turn ideas and plans into results, faster. Clear language, a solid approach, tangible outcomes. In the Netherlands and Sweden.",
+    "button": "Start a conversation",
+    "image": "https://static.wixstatic.com/media/798f75_7bf13e1e5ae245c4bd6f133e99ca826f~mv2.jpg"
+  },
+  "statement": "Projects stall when plans, people and decisions do not line up. We bring structure and pace, so what you imagine actually gets built.",
+  "servicesHeading": "What we do",
+  "services": [
+    {
+      "anchor": "innovation",
+      "title": "Innovation and strategic development",
+      "text": "Outside perspective and a plan that gets you moving when capacity is tight or the next step feels risky."
+    },
+    {
+      "anchor": "spatial",
+      "title": "Spatial development",
+      "text": "Structure and pace for area and location projects, with stakeholders aligned and decisions moving."
+    },
+    {
+      "anchor": "interim",
+      "title": "Interim management",
+      "text": "A steady hand that takes responsibility for results and leaves you with a team that can carry on."
+    }
+  ],
+  "workHeading": "Selected work",
+  "allCases": "All cases",
+  "mission": "We want innovation that improves daily life for people and organisations, with trust and connection back at the heart of the process.",
+  "cta": "Tell us where your project is stuck. We reply in plain language."
+}

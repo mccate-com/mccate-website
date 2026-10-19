@@ -1,0 +1,34 @@
+{
+  "seo": {
+    "title": "Cases: ReCover, Qumey | McCate & Company",
+    "description": "Selected McCate & Company projects: a circular business model for medical face masks (ReCover) and a conceptual design for a new product range (Qumey)."
+  },
+  "title": "Cases",
+  "sub": "We have worked with small and large organisations. The common driver is the belief that short-term change is needed for a more sustainable future.",
+  "image": "",
+  "labels": { "challenge": "Challenge", "approach": "Approach", "result": "Result" },
+  "cases": [
+    {
+      "id": "recover",
+      "title": "ReCover",
+      "summary": "Circular design and business model for medical face masks.",
+      "art": "rings",
+      "image": "",
+      "imageAlt": "",
+      "challenge": "",
+      "approach": "",
+      "result": ""
+    },
+    {
+      "id": "qumey",
+      "title": "Qumey",
+      "summary": "Conceptual design for a new product range.",
+      "art": "bars",
+      "image": "",
+      "imageAlt": "",
+      "challenge": "",
+      "approach": "",
+      "result": ""
+    }
+  ]
+}

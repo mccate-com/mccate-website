@@ -1,0 +1,185 @@
+# Decap CMS configuration for mccate.com
+# GitHub repository that stores the content
+backend:
+  name: github
+  repo: mccate-com/mccate-website
+  branch: main
+
+publish_mode: simple
+media_folder: images
+public_folder: /images
+locale: en
+
+# To add Dutch and Swedish later: copy content/en to content/nl and content/sv,
+# translate the text, and duplicate the "English" collection below for each language.
+
+collections:
+  - name: english
+    label: "English pages"
+    files:
+      - name: home
+        label: Home
+        file: content/en/home.json
+        fields:
+          - label: Search engine
+            name: seo
+            widget: object
+            fields:
+              - { label: Page title (max ~60 characters), name: title, widget: string }
+              - { label: Description (max ~155 characters), name: description, widget: text }
+          - label: Top of page
+            name: hero
+            widget: object
+            fields:
+              - label: Big headline, one line per row
+                name: lines
+                widget: list
+                field: { label: Line, name: line, widget: string }
+              - { label: Intro text, name: intro, widget: text }
+              - { label: Button text, name: button, widget: string }
+              - { label: Background photo, name: image, widget: image, required: false }
+          - { label: Statement, name: statement, widget: text }
+          - { label: Services heading, name: servicesHeading, widget: string }
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Short text, name: text, widget: text }
+              - { label: "Link target (matches the id on the Services page)", name: anchor, widget: string }
+          - { label: Work heading, name: workHeading, widget: string }
+          - { label: "Link text: all cases", name: allCases, widget: string }
+          - { label: Mission statement, name: mission, widget: text }
+          - { label: Call to action text, name: cta, widget: string }
+
+      - name: services
+        label: Services
+        file: content/en/services.json
+        fields:
+          - label: Search engine
+            name: seo
+            widget: object
+            fields:
+              - { label: Page title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - { label: Page title (big), name: title, widget: string }
+          - { label: Intro, name: sub, widget: text }
+          - { label: Top photo (optional, red if empty), name: image, widget: image, required: false }
+          - label: Services
+            name: items
+            widget: list
+            fields:
+              - { label: "Id (used in links, lowercase, no spaces)", name: id, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Bullet points
+                name: bullets
+                widget: list
+                required: false
+                field: { label: Bullet, name: bullet, widget: string }
+          - { label: Call to action text, name: cta, widget: string }
+
+      - name: cases
+        label: Cases
+        file: content/en/cases.json
+        fields:
+          - label: Search engine
+            name: seo
+            widget: object
+            fields:
+              - { label: Page title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - { label: Page title (big), name: title, widget: string }
+          - { label: Intro, name: sub, widget: text }
+          - { label: Top photo (optional, red if empty), name: image, widget: image, required: false }
+          - label: Labels
+            name: labels
+            widget: object
+            fields:
+              - { label: Challenge, name: challenge, widget: string }
+              - { label: Approach, name: approach, widget: string }
+              - { label: Result, name: result, widget: string }
+          - label: Cases
+            name: cases
+            widget: list
+            fields:
+              - { label: "Id (used in links, lowercase, no spaces)", name: id, widget: string }
+              - { label: Name, name: title, widget: string }
+              - { label: One-line summary, name: summary, widget: string }
+              - { label: Photo, name: image, widget: image, required: false }
+              - { label: Photo description (for accessibility and search), name: imageAlt, widget: string, required: false }
+              - { label: "Graphic when there is no photo", name: art, widget: select, options: [rings, bars], default: rings }
+              - { label: Challenge, name: challenge, widget: text, required: false }
+              - { label: Approach, name: approach, widget: text, required: false }
+              - { label: Result, name: result, widget: text, required: false }
+
+      - name: about
+        label: About
+        file: content/en/about.json
+        fields:
+          - label: Search engine
+            name: seo
+            widget: object
+            fields:
+              - { label: Page title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - { label: Page title (big), name: title, widget: string }
+          - { label: Intro, name: sub, widget: text }
+          - { label: Top photo, name: image, widget: image, required: false }
+          - { label: Name, name: name, widget: string }
+          - { label: Role, name: role, widget: string }
+          - { label: Portrait, name: portrait, widget: image, required: false }
+          - { label: Portrait description, name: portraitAlt, widget: string, required: false }
+          - { label: "Story (blank line between paragraphs)", name: body, widget: text }
+          - { label: "LinkedIn link text (empty hides it)", name: linkedinLabel, widget: string, required: false }
+          - { label: Mission statement, name: mission, widget: text }
+
+      - name: contact
+        label: Contact
+        file: content/en/contact.json
+        fields:
+          - label: Search engine
+            name: seo
+            widget: object
+            fields:
+              - { label: Page title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - { label: Page title (big), name: title, widget: string }
+          - { label: Intro, name: sub, widget: text }
+          - { label: Top photo, name: image, widget: image, required: false }
+          - { label: Label for phone, name: phoneLabel, widget: string }
+          - { label: Label for location, name: basedLabel, widget: string }
+
+      - name: site
+        label: "Site-wide (menu, contact details, footer)"
+        file: content/en/site.json
+        fields:
+          - { label: Brand name, name: brand, widget: string }
+          - { label: Founder name, name: founder, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Phone (display), name: phone, widget: string }
+          - { label: "Phone (for links, no spaces, e.g. +31611834523)", name: phoneRaw, widget: string }
+          - { label: LinkedIn URL, name: linkedin, widget: string }
+          - { label: Location, name: location, widget: string }
+          - { label: "Skip link text", name: skip, widget: string }
+          - label: Footer tagline, one word per row
+            name: tagline
+            widget: list
+            field: { label: Word, name: word, widget: string }
+          - label: Menu names
+            name: nav
+            widget: object
+            fields:
+              - { label: Home, name: home, widget: string }
+              - { label: Services, name: services, widget: string }
+              - { label: Cases, name: cases, widget: string }
+              - { label: About, name: about, widget: string }
+              - { label: Contact, name: contact, widget: string }
+          - label: "Page addresses (only change with care, affects SEO)"
+            name: slugs
+            widget: object
+            fields:
+              - { label: Services, name: services, widget: string }
+              - { label: Cases, name: cases, widget: string }
+              - { label: About, name: about, widget: string }
+              - { label: Contact, name: contact, widget: string }
