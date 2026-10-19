@@ -8,8 +8,8 @@
   --line: #d8d8d8;
   --max: 1360px;
   --gutter: clamp(20px, 4.5vw, 64px);
-  --head: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --head: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
