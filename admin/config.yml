@@ -109,6 +109,13 @@ collections:
               - { label: One-line summary, name: summary, widget: string }
               - { label: Photo, name: image, widget: image, required: false }
               - { label: Photo description (for accessibility and search), name: imageAlt, widget: string, required: false }
+              - label: More photos
+                name: gallery
+                widget: list
+                required: false
+                fields:
+                  - { label: Photo, name: image, widget: image }
+                  - { label: Photo description, name: alt, widget: string, required: false }
               - { label: "Graphic when there is no photo", name: art, widget: select, options: [rings, bars, plan, flow], default: rings }
               - { label: Client and partners, name: client, widget: string, required: false }
               - { label: Challenge, name: challenge, widget: text, required: false }

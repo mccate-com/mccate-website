@@ -28,14 +28,32 @@
     {
       "id": "canteen",
       "title": "University canteen",
-      "summary": "Three concepts to expand a canteen on a tight site, taken to the municipality and the neighbours.",
+      "summary": "A glazed extension for a university canteen, built around a tree that had to stay.",
       "art": "plan",
-      "image": "",
-      "imageAlt": "",
+      "image": "/images/tua-exterior.jpg",
+      "imageAlt": "Render of the glazed extension at Theologische Universiteit Apeldoorn, with timber fins and a brick chimney",
       "client": "Theologische Universiteit Apeldoorn (TUA)",
-      "challenge": "The university canteen needed to grow, but the site left little room: among other things a protected tree could not be touched. Standard solutions did not fit.",
-      "approach": "We searched for the options the site did allow and developed three different concepts. We presented them to the municipality, supported the first steps towards a permit and presented the plans to the neighbourhood.",
-      "result": "A positive reception from the municipality and the neighbours. The university is now raising funds to realise the plan."
+      "challenge": "The university canteen needed to grow, but the site left little room: a protected tree could not be touched and the plot was tight. Standard solutions did not fit.",
+      "approach": "We looked for what the site did allow and developed three different concepts. The concept we developed furthest is a light glass extension with a roof that spans the tree. Together with Wouter Meijer we presented the concepts to the municipality, supported the first steps towards a permit and presented the plans to the neighbourhood.",
+      "result": "A positive reception from the municipality and the neighbours. The university is now raising funds to realise the plan.",
+      "gallery": [
+        {
+          "image": "/images/tua-entrance.jpg",
+          "alt": "Entrance of the extension"
+        },
+        {
+          "image": "/images/tua-interior.jpg",
+          "alt": "Interior with long tables and a brick wall"
+        },
+        {
+          "image": "/images/tua-interior-2.jpg",
+          "alt": "Interior looking towards the bar"
+        },
+        {
+          "image": "/images/tua-evening.jpg",
+          "alt": "The extension in the evening"
+        }
+      ]
     },
     {
       "id": "qumey",

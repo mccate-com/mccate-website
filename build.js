@@ -236,7 +236,7 @@ ${emailLine(site, s.cta, true)}`;
             <p>${esc(x.summary)}</p>
 ${rows ? `            <dl>\n${rows}\n            </dl>` : ''}
           </div>
-        </article>`;
+${(x.gallery || []).filter(g => g && g.image).length ? `          <div class="gallery">\n${x.gallery.filter(g => g && g.image).map(g => `            <img src="${esc(g.image)}" alt="${esc(g.alt || x.title)}" loading="lazy">`).join('\n')}\n          </div>\n` : ''}        </article>`;
     }).join('\n');
     return `${band(c.title, c.sub, c.image)}
 
