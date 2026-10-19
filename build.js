@@ -34,8 +34,14 @@ function urlFor(lang, key) {
 }
 
 const ART = {
-  rings: `<svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><circle cx="200" cy="200" r="140" stroke-dasharray="720 160"/><circle cx="200" cy="200" r="88" stroke-dasharray="400 153" stroke-opacity=".65"/><circle cx="200" cy="200" r="38" stroke-opacity=".4"/></g><circle cx="200" cy="200" r="12" fill="#fff"/><path d="M338 232 l-14 -22 l30 4z" fill="#fff"/></svg>`,
-  bars: `<svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="70" y="190" width="72" height="110" rx="36" fill="#6b6b6b"/><rect x="162" y="135" width="92" height="165" rx="46" fill="#fff"/><rect x="274" y="70" width="80" height="230" rx="40" fill="#e0241b"/><rect x="50" y="300" width="300" height="3" fill="#fff" opacity=".6"/></svg>`
+  rings: {
+    tile: `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><circle cx="200" cy="200" r="140" stroke-dasharray="720 160"/><circle cx="200" cy="200" r="88" stroke-dasharray="400 153" stroke-opacity=".65"/><circle cx="200" cy="200" r="38" stroke-opacity=".4"/></g><circle cx="200" cy="200" r="12" fill="#fff"/><path d="M338 232 l-14 -22 l30 4z" fill="#fff"/></svg>`,
+    wide: `<svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><circle cx="250" cy="200" r="140" stroke-dasharray="720 160"/><circle cx="250" cy="200" r="88" stroke-dasharray="400 153" stroke-opacity=".65"/><circle cx="250" cy="200" r="38" stroke-opacity=".4"/></g><circle cx="250" cy="200" r="12" fill="#fff"/><path d="M388 232 l-14 -22 l30 4z" fill="#fff"/></svg>`
+  },
+  bars: {
+    tile: `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="60" y="250" width="72" height="110" rx="36" fill="#6b6b6b"/><rect x="152" y="195" width="92" height="165" rx="46" fill="#fff"/><rect x="264" y="130" width="80" height="230" rx="40" fill="#e0241b"/><rect x="40" y="360" width="320" height="3" fill="#fff" opacity=".6"/></svg>`,
+    wide: `<svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="110" y="190" width="72" height="110" rx="36" fill="#6b6b6b"/><rect x="202" y="135" width="92" height="165" rx="46" fill="#fff"/><rect x="314" y="70" width="80" height="230" rx="40" fill="#e0241b"/><rect x="90" y="300" width="320" height="3" fill="#fff" opacity=".6"/></svg>`
+  }
 };
 const artBg = a => (a === 'bars' ? '#000' : '#e0241b');
 
@@ -114,16 +120,16 @@ ${image ? `      <img src="${esc(image)}" alt="">\n` : ''}${extra}      <div cla
       </div>
     </div>`;
 
-const emailLine = (site, intro) => `    <section>
+const emailLine = (site, intro, tight) => `    <section${tight ? ' style="padding-top:0"' : ''}>
       <div class="wrap">
         ${intro ? `<p class="cta-sub">${esc(intro)}</p>` : ''}
         <a class="cta-line" href="mailto:${esc(site.email)}">${esc(site.email)}</a>
       </div>
     </section>`;
 
-function caseVisual(c) {
+function caseVisual(c, variant) {
   if (c.image) return `<img src="${esc(c.image)}" alt="${esc(c.imageAlt || c.title)}" loading="lazy">`;
-  return ART[c.art] || '';
+  return (ART[c.art] || {})[variant] || '';
 }
 
 const builders = {
@@ -135,7 +141,7 @@ const builders = {
             <p>${esc(s.text)}</p>
           </a>`).join('\n');
     const tiles = (cases.cases || []).slice(0, 4).map(c => `          <a class="tile" href="${urlFor(lang, 'cases')}#${esc(c.id)}" style="background:${artBg(c.art)}">
-            ${caseVisual(c)}
+            ${caseVisual(c, 'tile')}
             <div class="cap">
               <h3>${esc(c.title)}</h3>
               <p>${esc(c.summary)}</p>
@@ -207,7 +213,7 @@ ${items}
       </div>
     </section>
 
-${emailLine(site, s.cta)}`;
+${emailLine(site, s.cta, true)}`;
   },
 
   cases(lang) {
@@ -217,7 +223,7 @@ ${emailLine(site, s.cta)}`;
       const rows = ['challenge', 'approach', 'result'].filter(k => (x[k] || '').trim())
         .map(k => `              <dt>${esc(L[k] || k)}</dt><dd>${esc(x[k])}</dd>`).join('\n');
       return `        <article class="case-big" id="${esc(x.id)}"${i === arr.length - 1 ? ' style="border-bottom:2px solid var(--ink)"' : ''}>
-          <div class="art" style="background:${artBg(x.art)}">${caseVisual(x)}</div>
+          <div class="art" style="background:${artBg(x.art)}">${caseVisual(x, 'wide')}</div>
           <div>
             <h2>${esc(x.title)}</h2>
             <p>${esc(x.summary)}</p>
