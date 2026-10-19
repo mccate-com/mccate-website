@@ -1,33 +1,42 @@
 {
   "seo": {
-    "title": "Services: Innovation, Spatial Development | McCate",
-    "description": "Innovation and strategic development, spatial development and interim management. How McCate & Company helps organisations move from plan to result."
+    "title": "Quick Scan, Decision Sparring, Improvement Sprint | McCate",
+    "description": "Three short ways to get complex projects moving: quick scan, decision sparring and improvement sprint, for spatial development and innovation."
   },
   "title": "Services",
-  "sub": "Three ways to work together. Each one starts with understanding why you do what you do.",
+  "sub": "Three short ways to get moving, for organisations in spatial development and innovation. Each one starts with the people who have to decide.",
   "image": "",
   "items": [
     {
-      "id": "innovation",
-      "title": "Innovation and strategic development",
-      "text": "Innovation is hard when capacity is limited and stepping outside the comfort zone is uncomfortable. We provide out-of-the-box, strategic solutions that make you more future-proof, quickly.",
+      "id": "quick-scan",
+      "title": "Quick scan",
+      "text": "In one to two weeks we map where your project or process stalls and what would unblock it fastest. You get a clear picture on one page and a short list of what to do first.",
       "bullets": [
-        "Value proposition and business model design",
-        "Concept and product development",
-        "Creative workshops and visual conceptualisation"
+        "Conversations with the people involved",
+        "One-page overview of bottlenecks and options",
+        "Recommended first steps, ranked by impact"
       ]
     },
     {
-      "id": "spatial",
-      "title": "Spatial development",
-      "text": "Area and location projects slow down when stakeholders, plans and decisions do not line up. We bring structure, shared understanding and pace to the process.",
-      "bullets": []
+      "id": "sparring",
+      "title": "Decision sparring",
+      "text": "A sounding board for the people who have to decide. We bring an outside view, summarise the big picture and help you weigh the options, with attention to the process and to the people it affects.",
+      "bullets": [
+        "Preparing and structuring a decision",
+        "Aligning stakeholders before the meeting",
+        "A follow-up check after the decision"
+      ]
     },
     {
-      "id": "interim",
-      "title": "Interim management",
-      "text": "When a process needs a steady hand, we step in as interim manager. We take responsibility for results, speed up the work and leave you with a team that can continue.",
-      "bullets": []
+      "id": "sprint",
+      "title": "Improvement sprint",
+      "text": "When an improvement needs hands as well as advice, we lead a short sprint with a clear goal and then hand over. This is interim management in its short, focused form.",
+      "bullets": [
+        "Fixed goal and duration, usually four to twelve weeks",
+        "Keep operations running, find the bottlenecks, automate what repeats",
+        "Active in your team, then a clean handover",
+        "Longer interim assignments on request"
+      ]
     }
   ],
   "cta": "Not sure which fits? Describe your situation and we will tell you what we would do first."

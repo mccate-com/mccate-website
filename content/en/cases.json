@@ -1,12 +1,17 @@
 {
   "seo": {
-    "title": "Cases: ReCover, Qumey | McCate & Company",
-    "description": "Selected McCate & Company projects: a circular business model for medical face masks (ReCover) and a conceptual design for a new product range (Qumey)."
+    "title": "Cases: ReCover, TUA Apeldoorn, Qumey, EARTH | McCate",
+    "description": "Selected work: a circular model for medical face masks, expansion concepts for a university canteen in Apeldoorn, a circular product concept and interim management for a soil and archaeology firm."
   },
   "title": "Cases",
-  "sub": "We have worked with small and large organisations. The common driver is the belief that short-term change is needed for a more sustainable future.",
+  "sub": "From a hard ambition to a concrete concept or a calmer operation. A selection of recent work.",
   "image": "",
-  "labels": { "challenge": "Challenge", "approach": "Approach", "result": "Result" },
+  "labels": {
+    "client": "Client",
+    "challenge": "Challenge",
+    "approach": "Approach",
+    "result": "Result"
+  },
   "cases": [
     {
       "id": "recover",
@@ -15,20 +20,46 @@
       "art": "rings",
       "image": "",
       "imageAlt": "",
-      "challenge": "",
-      "approach": "",
-      "result": ""
+      "client": "DSM N.V., with iLINQ and Dijkgraaf Strategisch Advies",
+      "challenge": "In 2020 the region depended on overseas suppliers for protective equipment, and locally made masks were designed for incineration, destroying large volumes of high-value, non-renewable materials. Speed had come before sustainability.",
+      "approach": "Together with Dutch PPE Solutions (a joint venture of VDL and DSM), Maasstad hospital, Renewi and PreZero we mapped a circular value chain. Interviews, brainstorms and co-creation with hospital staff tested the legal, medical, design and material criteria and defined roles for a pilot.",
+      "result": "A complete concept design for the product and value chain, a feasibility assessment with a visual pilot roadmap, tested strategies for design and recycling, and an action plan for commercialisation. The work became the basis for a Dutch government procurement project."
+    },
+    {
+      "id": "canteen",
+      "title": "University canteen",
+      "summary": "Three concepts to expand a canteen on a tight site, taken to the municipality and the neighbours.",
+      "art": "plan",
+      "image": "",
+      "imageAlt": "",
+      "client": "Theologische Universiteit Apeldoorn (TUA)",
+      "challenge": "The university canteen needed to grow, but the site left little room: among other things a protected tree could not be touched. Standard solutions did not fit.",
+      "approach": "We searched for the options the site did allow and developed three different concepts. We presented them to the municipality, supported the first steps towards a permit and presented the plans to the neighbourhood.",
+      "result": "A positive reception from the municipality and the neighbours. The university is now raising funds to realise the plan."
     },
     {
       "id": "qumey",
       "title": "Qumey",
-      "summary": "Conceptual design for a new product range.",
+      "summary": "Conceptual design for a new circular product range.",
       "art": "bars",
       "image": "",
       "imageAlt": "",
-      "challenge": "",
-      "approach": "",
-      "result": ""
+      "client": "Qumey Metaalindustrie B.V.",
+      "challenge": "Qumey wanted to show stakeholders and the industry what its new circular product range could be.",
+      "approach": "We defined and prioritised the key design criteria with Qumey, made a first digital concept and refined design and story in online feedback sessions.",
+      "result": "One conceptual image that shows the different designs, the sustainability story and the unique features, and helps Qumey communicate its product vision."
+    },
+    {
+      "id": "earth",
+      "title": "Interim management",
+      "summary": "Keeping a soil investigation and archaeology firm running, then making it run better.",
+      "art": "flow",
+      "image": "",
+      "imageAlt": "",
+      "client": "Soil investigation and archaeology firm, Amersfoort (ongoing)",
+      "challenge": "After seven years the manager left. The organisation had to keep running while nobody yet knew where its processes were fragile.",
+      "approach": "Stepped in to keep operations going, then brought structure to the processes. First exposed the bottlenecks, now automating the repetitive work wherever possible.",
+      "result": "Continuity through the handover, clearer processes and less manual work, with the next improvements already in progress."
     }
   ]
 }

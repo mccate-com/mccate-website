@@ -96,6 +96,7 @@ collections:
             name: labels
             widget: object
             fields:
+              - { label: Client, name: client, widget: string }
               - { label: Challenge, name: challenge, widget: string }
               - { label: Approach, name: approach, widget: string }
               - { label: Result, name: result, widget: string }
@@ -108,7 +109,8 @@ collections:
               - { label: One-line summary, name: summary, widget: string }
               - { label: Photo, name: image, widget: image, required: false }
               - { label: Photo description (for accessibility and search), name: imageAlt, widget: string, required: false }
-              - { label: "Graphic when there is no photo", name: art, widget: select, options: [rings, bars], default: rings }
+              - { label: "Graphic when there is no photo", name: art, widget: select, options: [rings, bars, plan, flow], default: rings }
+              - { label: Client and partners, name: client, widget: string, required: false }
               - { label: Challenge, name: challenge, widget: text, required: false }
               - { label: Approach, name: approach, widget: text, required: false }
               - { label: Result, name: result, widget: text, required: false }

@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const OUT = path.join(ROOT, 'dist');
+const PREVIEW = process.argv.includes('--preview');
+const OUT = path.join(ROOT, PREVIEW ? 'dist-preview' : 'dist');
 const BASE = 'https://www.mccate.com';
 const DEFAULT = 'en';
 const PAGES = ['home', 'services', 'cases', 'about', 'contact'];
@@ -38,12 +39,20 @@ const ART = {
     tile: `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><circle cx="200" cy="200" r="140" stroke-dasharray="720 160"/><circle cx="200" cy="200" r="88" stroke-dasharray="400 153" stroke-opacity=".65"/><circle cx="200" cy="200" r="38" stroke-opacity=".4"/></g><circle cx="200" cy="200" r="12" fill="#fff"/><path d="M338 232 l-14 -22 l30 4z" fill="#fff"/></svg>`,
     wide: `<svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><circle cx="250" cy="200" r="140" stroke-dasharray="720 160"/><circle cx="250" cy="200" r="88" stroke-dasharray="400 153" stroke-opacity=".65"/><circle cx="250" cy="200" r="38" stroke-opacity=".4"/></g><circle cx="250" cy="200" r="12" fill="#fff"/><path d="M388 232 l-14 -22 l30 4z" fill="#fff"/></svg>`
   },
+  plan: {
+    tile: `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><rect x="50" y="30" width="130" height="100"/><rect x="190" y="30" width="160" height="55"/><rect x="50" y="140" width="90" height="130"/><rect x="150" y="95" width="200" height="175"/></g><rect x="190" y="130" width="110" height="85" fill="#e0241b"/><path d="M80 300 C 160 300, 200 260, 330 260" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="6 7"/></svg>`,
+    wide: `<svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><rect x="100" y="60" width="130" height="110"/><rect x="240" y="60" width="160" height="60"/><rect x="100" y="180" width="90" height="140"/><rect x="200" y="130" width="200" height="190"/></g><rect x="240" y="170" width="110" height="90" fill="#e0241b"/><path d="M130 350 C 210 350, 250 300, 380 300" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="6 7"/></svg>`
+  },
+  flow: {
+    tile: `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><path d="M70 120 H200 V230 H330 V340"/><circle cx="70" cy="120" r="16" fill="#fff"/><circle cx="200" cy="120" r="16"/><circle cx="200" cy="230" r="16"/><circle cx="330" cy="230" r="16"/></g><circle cx="330" cy="340" r="22" fill="#000"/><circle cx="330" cy="340" r="9" fill="#fff"/></svg>`,
+    wide: `<svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3"><path d="M100 110 H240 V200 H380 V290"/><circle cx="100" cy="110" r="16" fill="#fff"/><circle cx="240" cy="110" r="16"/><circle cx="240" cy="200" r="16"/><circle cx="380" cy="200" r="16"/></g><circle cx="380" cy="290" r="22" fill="#000"/><circle cx="380" cy="290" r="9" fill="#fff"/></svg>`
+  },
   bars: {
     tile: `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="60" y="250" width="72" height="110" rx="36" fill="#6b6b6b"/><rect x="152" y="195" width="92" height="165" rx="46" fill="#fff"/><rect x="264" y="130" width="80" height="230" rx="40" fill="#e0241b"/><rect x="40" y="360" width="320" height="3" fill="#fff" opacity=".6"/></svg>`,
     wide: `<svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="110" y="190" width="72" height="110" rx="36" fill="#6b6b6b"/><rect x="202" y="135" width="92" height="165" rx="46" fill="#fff"/><rect x="314" y="70" width="80" height="230" rx="40" fill="#e0241b"/><rect x="90" y="300" width="320" height="3" fill="#fff" opacity=".6"/></svg>`
   }
 };
-const artBg = a => (a === 'bars' ? '#000' : '#e0241b');
+const artBg = a => ((a === 'rings' || a === 'flow') ? '#e0241b' : '#000');
 
 const PLAN = `<svg class="bg-plan" viewBox="0 0 420 460" aria-hidden="true"><rect class="parcel" x="10" y="10" width="120" height="100"/><rect class="parcel" x="140" y="10" width="130" height="70"/><rect class="parcel" x="280" y="10" width="130" height="150"/><rect class="parcel" x="10" y="120" width="90" height="130"/><rect class="parcel" x="110" y="90" width="160" height="160"/><rect class="target" x="280" y="170" width="130" height="110"/><rect class="parcel" x="10" y="260" width="150" height="110"/><rect class="parcel" x="170" y="260" width="100" height="190"/><rect class="parcel" x="280" y="290" width="130" height="160"/><path class="road" d="M60 330 C 60 230, 190 300, 190 200 S 250 150, 345 225"/></svg>`;
 
@@ -175,7 +184,7 @@ ${rows}
     <section style="padding-top:0">
       <div class="wrap">
         <p class="kicker">${esc(h.workHeading)}</p>
-        <div class="tiles">
+        <div class="tiles${(cases.cases || []).slice(0, 4).length === 3 ? ' tiles-3' : ''}">
 ${tiles}
         </div>
         <p class="more"><a href="${urlFor(lang, 'cases')}">${esc(h.allCases)}</a></p>
@@ -218,7 +227,7 @@ ${emailLine(site, s.cta, true)}`;
     const { cases: c } = data[lang];
     const L = c.labels || {};
     const items = (c.cases || []).map((x, i, arr) => {
-      const rows = ['challenge', 'approach', 'result'].filter(k => (x[k] || '').trim())
+      const rows = ['client', 'challenge', 'approach', 'result'].filter(k => (x[k] || '').trim())
         .map(k => `              <dt>${esc(L[k] || k)}</dt><dd>${esc(x[k])}</dd>`).join('\n');
       return `        <article class="case-big" id="${esc(x.id)}"${i === arr.length - 1 ? ' style="border-bottom:2px solid var(--ink)"' : ''}>
           <div class="art" style="background:${artBg(x.art)}">${caseVisual(x, 'wide')}</div>
@@ -288,7 +297,16 @@ for (const lang of LANGS) {
     const url = urlFor(lang, key);
     const dir = path.join(OUT, url);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), layout(lang, key, builders[key](lang)));
+    let html = layout(lang, key, builders[key](lang));
+    if (PREVIEW) {
+      const depth = url.split('/').filter(Boolean).length;
+      html = html.replace(/(href|src)="\/([^"]*)"/g, (m, a, p) => {
+        const [pth, hash] = p.split('#');
+        const file = (pth === '' || pth.endsWith('/')) ? pth + 'index.html' : pth;
+        return `${a}="${'../'.repeat(depth)}${file}${hash !== undefined ? '#' + hash : ''}"`;
+      });
+    }
+    fs.writeFileSync(path.join(dir, 'index.html'), html);
     sitemap.push(BASE + url);
   }
 }

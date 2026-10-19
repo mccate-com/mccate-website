@@ -1,35 +1,40 @@
 {
   "seo": {
-    "title": "Innovation & Spatial Development | McCate & Company",
-    "description": "McCate & Company speeds up innovation and spatial development projects. Strategic design and interim management in the Netherlands and Sweden."
+    "title": "Short, Sharp Help for Complex Projects | McCate & Company",
+    "description": "Quick scans, decision sparring and short improvement sprints for spatial development and innovation projects. People at the center. Netherlands and Sweden."
   },
   "hero": {
-    "lines": ["Innovation", "& spatial", "development."],
-    "intro": "We turn ideas and plans into results, faster. Clear language, a solid approach, tangible outcomes. In the Netherlands and Sweden.",
+    "lines": [
+      "Short, sharp",
+      "help to get",
+      "projects",
+      "moving."
+    ],
+    "intro": "Quick scans, decision sparring and short improvement sprints for spatial development and innovation. Decisions are made by people. We start there.",
     "button": "Start a conversation",
     "image": "https://static.wixstatic.com/media/798f75_7bf13e1e5ae245c4bd6f133e99ca826f~mv2.jpg"
   },
-  "statement": "Projects stall when plans, people and decisions do not line up. We bring structure and pace, so what you imagine actually gets built.",
-  "servicesHeading": "What we do",
+  "statement": "Most projects do not stall on knowledge. They stall on unclear choices and people who are not yet aligned. We find the next decision and make it easy to take.",
+  "servicesHeading": "How we help",
   "services": [
     {
-      "anchor": "innovation",
-      "title": "Innovation and strategic development",
-      "text": "Outside perspective and a plan that gets you moving when capacity is tight or the next step feels risky."
+      "anchor": "quick-scan",
+      "title": "Quick scan",
+      "text": "One to two weeks. Where does it stall, what fixes the most, and what do you do first?"
     },
     {
-      "anchor": "spatial",
-      "title": "Spatial development",
-      "text": "Structure and pace for area and location projects, with stakeholders aligned and decisions moving."
+      "anchor": "sparring",
+      "title": "Decision sparring",
+      "text": "A sounding board for directors and teams facing hard choices, with an eye for both process and people."
     },
     {
-      "anchor": "interim",
-      "title": "Interim management",
-      "text": "A steady hand that takes responsibility for results and leaves you with a team that can carry on."
+      "anchor": "sprint",
+      "title": "Improvement sprint",
+      "text": "A few weeks, a clear goal, then handover. Interim leadership without months of operations."
     }
   ],
   "workHeading": "Selected work",
   "allCases": "All cases",
-  "mission": "We want innovation that improves daily life for people and organisations, with trust and connection back at the heart of the process.",
+  "mission": "Decisions are made by people. We start there, with trust, clear language and connection at the heart of the process.",
   "cta": "Tell us where your project is stuck. We reply in plain language."
 }
